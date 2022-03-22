@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tinkers Creek Flow</title>
+    <!--<link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />-->
+    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+
+
+
+</head>
+
+<body>
+    <!--    <div class="navbarnavbar-expand-lg">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="/" class="navbar-brand">Application name</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a href="{{ url_for('home') }}">Home</a></li>
+                        <li class="nav-item"><a href="{{ url_for('about') }}">About</a></li>
+                        <li class="nav-item"><a href="{{ url_for('contact') }}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+    <!--global navbar-->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <!--main-->
+            <a class="navbar-brand" href="{{ url_for('home') }}">Tinkers Flow Predictor</a>
+            <!--three lines button-->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!--list of links-->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
+                    </li>
+                <!--    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('howitworks') }}">How it Works</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('contact') }}">Link</a>
+                    </li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container body-content">
+        {% block content %}{% endblock %}
+        <hr />
+        <footer>
+            <p>&copy; {{ year }} - Zachery Klosterman</p>
+        </footer>
+    </div>
+
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <!--<script src="/static/scripts/bootstrap.js"></script>-->
+    <script src="/static/scripts/respond.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>
